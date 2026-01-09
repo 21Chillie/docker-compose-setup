@@ -1,0 +1,9 @@
+services:
+  cloudflared:
+    image: cloudflare/cloudflared:latest
+    container_name: animaku_tunnel
+    restart: unless-stopped
+    network_mode: host
+    command: tunnel --no-autoupdate run --protocol http2 --token ${CLOUDFLARED_TOKEN}
+    environment:
+      - CLOUDFLARED_TOKEN=${CLOUDFLARED_TOKEN}
