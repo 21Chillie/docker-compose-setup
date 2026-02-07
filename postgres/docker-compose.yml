@@ -17,7 +17,7 @@ volumes:
 services:
   postgres:
     container_name: pgautoupgrade-db
-    image: pgautoupgrade/pgautoupgrade:latest
+    image: pgautoupgrade/pgautoupgrade:18.1-alpine
     restart: unless-stopped
 
     networks:
